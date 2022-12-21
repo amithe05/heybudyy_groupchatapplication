@@ -8,6 +8,7 @@ import 'package:flutter_application_1/service/auth_service.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/widget.dart';
+import 'homepage.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -47,10 +48,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           style: GoogleFonts.newsCycle(
                               fontSize: 40, letterSpacing: -3),
                         ),
-                        SizedBox(
+                       const SizedBox(
                           height: 9.0,
                         ),
-                        Text(
+                       const Text(
                           "Create your account now to chat and explore",
                           style: TextStyle(
                               fontWeight: FontWeight.w400, fontSize: 15.0),
@@ -78,7 +79,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             }
                           },
                         ),
-                        SizedBox(
+                       const  SizedBox(
                           height: 10.0,
                         ),
                         TextFormField(
@@ -103,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 : "enter a valid email ";
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10.0,
                         ),
                         TextFormField(
@@ -129,7 +130,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             }
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10.0,
                         ),
                         SizedBox(
@@ -145,18 +146,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               onPressed: () {
                                 register();
                               },
-                              child: Text("Register")),
+                              child:const Text("Register")),
                         ),
-                        SizedBox(
+                       const SizedBox(
                           height: 10.0,
                         ),
                         Text.rich(TextSpan(
                             text: "Already have an account?  ",
-                            style: TextStyle(fontSize: 15.0),
+                            style:const TextStyle(fontSize: 15.0),
                             children: [
                               TextSpan(
                                   text: 'Login now',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       decoration: TextDecoration.underline),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
@@ -183,7 +184,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           await Helper.saveloginuser(true);
           await Helper.saveEmailsf(email);
           await Helper.saveUserNamesf(fullname);
-          // nextScreenReplace(context, Homepage());
+          nextScreenReplace(context, Homepage());
         } else {
              showsnackbar(context, Colors.red, value);
           setState(() {

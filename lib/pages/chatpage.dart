@@ -64,7 +64,7 @@ class _ChatPageState extends State<ChatPage> {
                         groupname: widget.groupname,
                       ));
                 }),
-                icon: Icon(Icons.info))
+                icon:const Icon(Icons.info))
           ],
         ),
         body: Stack(
@@ -92,7 +92,7 @@ class _ChatPageState extends State<ChatPage> {
               width: MediaQuery.of(context).size.width,
               child: Container(
                 color: Colors.grey[700],
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+                padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
                 width: MediaQuery.of(context).size.width,
                 child: Row(
                   children: [
@@ -100,13 +100,13 @@ class _ChatPageState extends State<ChatPage> {
                         child: TextFormField(
                       cursorColor: Colors.white,
                       controller: messagecontroller,
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
+                      style:const TextStyle(color: Colors.white),
+                      decoration:const InputDecoration(
                           border: InputBorder.none,
                           hintText: "start your chat.....",
                           hintStyle: TextStyle(color: Colors.white)),
                     )),
-                    SizedBox(
+                   const  SizedBox(
                       width: 12,
                     ),
                     GestureDetector(
@@ -119,7 +119,7 @@ class _ChatPageState extends State<ChatPage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
                             color: Theme.of(context).primaryColor),
-                        child: Icon(
+                        child:const Icon(
                           Icons.send,
                           color: Colors.white,
                         ),

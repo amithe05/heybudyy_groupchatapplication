@@ -21,7 +21,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       showDialog(
           context: context,
           builder: (context) {
-            return AlertDialog(
+            return const AlertDialog(
               content: Text('Password reset link sent! please check your emal'),
             );
           });
@@ -53,18 +53,18 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.35,
             ),
-            SizedBox(
+           const SizedBox(
               height: 90,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+           const Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Enter your email and we will send you a password reset link',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20),
               ),
             ),
-            SizedBox(
+           const SizedBox(
               height: 10,
             ),
             Padding(
@@ -95,13 +95,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
             ),
-            SizedBox(
+           const SizedBox(
               height: 10,
             ),
             MaterialButton(
               onPressed: passwordReset,
               color: Theme.of(context).primaryColor,
-              child: Text(
+              child: const Text(
                 'Reset password',
                 style: TextStyle(color: Colors.white),
               ),

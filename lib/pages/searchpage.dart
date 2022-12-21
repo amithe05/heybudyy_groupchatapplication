@@ -44,14 +44,14 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Search"),
+        title: const Text("Search"),
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             color: Theme.of(context).primaryColor,
             child: Row(
               children: [
@@ -59,7 +59,7 @@ class _SearchPageState extends State<SearchPage> {
                     child: TextField(
                   controller: searchcontroller,
                   cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "search groups....",
@@ -77,7 +77,7 @@ class _SearchPageState extends State<SearchPage> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40.0),
                         color: Colors.white.withOpacity(0.2)),
-                    child: Icon(
+                    child: const Icon(
                       Icons.search,
                       color: Colors.white,
                     ),

@@ -45,14 +45,14 @@ class _GroupInfoState extends State<GroupInfo> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text("group info"),
+        title:const Text("group info"),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(20),
+              padding:const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30.0),
                 color: Theme.of(context).primaryColor.withOpacity(0.2),
@@ -64,10 +64,10 @@ class _GroupInfoState extends State<GroupInfo> {
                     backgroundColor: Theme.of(context).primaryColor,
                     child: Text(
                       widget.groupname.substring(0, 1).toUpperCase(),
-                      style: TextStyle(color: Colors.white),
+                      style:const TextStyle(color: Colors.white),
                     ),
                   ),
-                  SizedBox(
+                 const SizedBox(
                     width: 20,
                   ),
                   Column(
@@ -75,10 +75,10 @@ class _GroupInfoState extends State<GroupInfo> {
                     children: [
                       Text(
                         "Group : ${widget.groupname}",
-                        style: TextStyle(
+                        style:const TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
                       ),
-                      SizedBox(
+                    const  SizedBox(
                         height: 5,
                       ),
                       Text("Admin:${getname(widget.admin)}")
@@ -106,22 +106,23 @@ class _GroupInfoState extends State<GroupInfo> {
                     itemCount: snapshot.data["members"].length,
                     itemBuilder: ((context, index) {
                       return Container(
-                        padding: EdgeInsets.symmetric(horizontal: 5,vertical: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 15),
                         child: ListTile(
                           leading: CircleAvatar(
                             radius: 30,
                             backgroundColor: Theme.of(context).primaryColor,
-                            child:Text(getname(snapshot.data["members"][index]).substring(0,1).toUpperCase(),style: TextStyle(color: Colors.white),)
+                            child:Text(getname(snapshot.data["members"][index]).substring(0,1).toUpperCase(),
+                            style:const TextStyle(color: Colors.white),)
                           ),
                           title:Text(getname(snapshot.data["members"][index])),
                         ),
                       );
                     }));
               } else {
-                return Center(child: Text("No members"));
+                return const Center(child: Text("No members"));
               }
             } else {
-              return Center(child: Text("No members"));
+              return const Center(child: Text("No members"));
             }
           } else {
             return Center(

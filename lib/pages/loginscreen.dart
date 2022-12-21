@@ -10,6 +10,8 @@ import 'package:flutter_application_1/widgets/widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../helper/helper_functions.dart';
+import 'forgot_password.dart';
+import 'homepage.dart';
 
 
 class Loginpage extends StatefulWidget {
@@ -48,10 +50,10 @@ class _LoginpageState extends State<Loginpage> {
                           style: GoogleFonts.newsCycle(
                               fontSize: 40, letterSpacing: -3),
                         ),
-                        SizedBox(
+                       const SizedBox(
                           height: 9.0,
                         ),
-                        Text(
+                       const Text(
                           "Login now to see what they are talking",
                           style: TextStyle(
                               fontWeight: FontWeight.w400, fontSize: 15.0),
@@ -79,7 +81,7 @@ class _LoginpageState extends State<Loginpage> {
                                 : "enter a valid email ";
                           },
                         ),
-                        SizedBox(
+                      const  SizedBox(
                           height: 15.0,
                         ),
                         TextFormField(
@@ -110,17 +112,17 @@ class _LoginpageState extends State<Loginpage> {
                           child: GestureDetector(
                             
                             onTap: () {
-                              // nextScreen(context, ForgotPassword());
+                              nextScreen(context, ForgotPassword());
                             },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
+                              children: const [
                                 Text('Forgot password ?'),
                               ],
                             ),
                           ),
                         ),
-                        SizedBox(
+                       const SizedBox(
                           height: 10.0,
                         ),
                         SizedBox(
@@ -136,18 +138,18 @@ class _LoginpageState extends State<Loginpage> {
                               onPressed: () {
                                 login();
                               },
-                              child: Text("Log in")),
+                              child:const Text("Log in")),
                         ),
-                        SizedBox(
+                     const   SizedBox(
                           height: 10.0,
                         ),
                         Text.rich(TextSpan(
                             text: "Dont have an account?  ",
-                            style: TextStyle(fontSize: 15.0),
+                            style: const TextStyle(fontSize: 15.0),
                             children: [
                               TextSpan(
                                   text: 'Register now',
-                                  style: TextStyle(
+                                  style:const TextStyle(
                                       decoration: TextDecoration.underline),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
@@ -179,7 +181,7 @@ class _LoginpageState extends State<Loginpage> {
           await Helper.saveEmailsf(email);
           await Helper.saveUserNamesf(snapshot.docs[0]["fullname"]);
 
-          // nextScreenReplace(context, const Homepage());
+          nextScreenReplace(context, const Homepage());
         } else {
           showsnackbar(context, Colors.red, value);
           setState(() {

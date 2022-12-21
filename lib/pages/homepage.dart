@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/helper/helper_functions.dart';
 import 'package:flutter_application_1/pages/loginscreen.dart';
+import 'package:flutter_application_1/pages/profilepage.dart';
+import 'package:flutter_application_1/pages/searchpage.dart';
 
 import 'package:flutter_application_1/service/auth_service.dart';
 import 'package:flutter_application_1/service/clouddata.dart';
@@ -61,13 +63,13 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Groups"),
+        title:const Text("Groups"),
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         actions: [
           IconButton(
               onPressed: () {
-                // nextScreen(context, SearchPage());
+                nextScreen(context, SearchPage());
               },
               icon: const Icon(Icons.search))
         ],
@@ -75,7 +77,7 @@ class _HomepageState extends State<Homepage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            Icon(
+           const Icon(
               Icons.account_circle,
               size: 150,
               color: Colors.grey,
@@ -83,37 +85,37 @@ class _HomepageState extends State<Homepage> {
             Text(
               username.toUpperCase(),
               textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+           const SizedBox(
               height: 30.0,
             ),
-            Divider(height: 3),
+           const Divider(height: 3),
             ListTile(
               onTap: (() {}),
               selectedColor: Theme.of(context).primaryColor,
               selected: true,
               contentPadding:
-                  EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-              leading: Icon(Icons.group),
-              title: Text(
+               const   EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+              leading:const Icon(Icons.group),
+              title:const Text(
                 "Groups",
                 style: TextStyle(color: Colors.black),
               ),
             ),
             ListTile(
-              // onTap: (() {
-              //   nextScreenReplace(
-              //       context,
-              //       ProfilePage(
-              //         username: username,
-              //         email: email,
-              //       ));
-              // }),
+              onTap: (() {
+                nextScreenReplace(
+                    context,
+                    ProfilePage(
+                      username: username,
+                      email: email,
+                    ));
+              }),
               contentPadding:
-                  EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-              leading: Icon(Icons.group),
-              title: Text(
+                 const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+              leading:const Icon(Icons.group),
+              title:const Text(
                 "Profile",
                 style: TextStyle(color: Colors.black),
               ),
@@ -125,14 +127,14 @@ class _HomepageState extends State<Homepage> {
                     context: context,
                     builder: ((context) {
                       return AlertDialog(
-                        content: Text("Are you sure you want to Logout"),
-                        title: Text("Logout"),
+                        content:const Text("Are you sure you want to Logout"),
+                        title:const Text("Logout"),
                         actions: [
                           IconButton(
                             onPressed: (() {
                               Navigator.pop(context);
                             }),
-                            icon: Icon(
+                            icon:const Icon(
                               Icons.cancel,
                               color: Colors.red,
                             ),
@@ -144,7 +146,7 @@ class _HomepageState extends State<Homepage> {
                                       builder: ((context) => Loginpage())),
                                   (route) => false);
                             }),
-                            icon: Icon(
+                            icon:const Icon(
                               Icons.done,
                               color: Colors.green,
                             ),
@@ -154,9 +156,9 @@ class _HomepageState extends State<Homepage> {
                     }));
               }),
               contentPadding:
-                  EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-              leading: Icon(Icons.logout),
-              title: Text(
+                 const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+              leading:const Icon(Icons.logout),
+              title: const Text(
                 "Logout",
                 style: TextStyle(color: Colors.black),
               ),
@@ -171,7 +173,7 @@ class _HomepageState extends State<Homepage> {
         }),
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(
+        child:const Icon(
           Icons.add,
           color: Colors.white,
           size: 30,
@@ -231,10 +233,10 @@ class _HomepageState extends State<Homepage> {
               color: Colors.grey[700],
             ),
           ),
-          SizedBox(
+        const  SizedBox(
             height: 20.0,
           ),
-          Text(
+        const  Text(
             "you haven't joined any groups, click on the icon to add a group or also search from top search button",
             textAlign: TextAlign.center,
           )
@@ -250,7 +252,7 @@ class _HomepageState extends State<Homepage> {
           return StatefulBuilder(
             builder: (context, setState) {
               return AlertDialog(
-                title: Text(
+                title:const Text(
                   "Create your group",
                   textAlign: TextAlign.left,
                 ),
@@ -275,8 +277,8 @@ class _HomepageState extends State<Homepage> {
                                     )),
                                 errorBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30.0),
-                                    borderSide: BorderSide(
-                                      color: Colors.red,
+                                    borderSide:const BorderSide(
+                                   color: Colors.red,
                                     )),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20.0),
@@ -292,7 +294,7 @@ class _HomepageState extends State<Homepage> {
                       onPressed: (() {
                         Navigator.of(context).pop();
                       }),
-                      child: Text(
+                      child:const Text(
                         "Cancel",
                       )),
                   ElevatedButton(
@@ -315,7 +317,7 @@ class _HomepageState extends State<Homepage> {
                               "Group created succesfully");
                         }
                       }),
-                      child: Text(
+                      child:const Text(
                         "Create",
                       ))
                 ],
